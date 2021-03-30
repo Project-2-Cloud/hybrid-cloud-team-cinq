@@ -5,6 +5,7 @@ import Login from '../Login.vue'
 
 Vue.use(VueRouter)
 
+
 const routes = [
   {
     path: '/',
@@ -12,7 +13,13 @@ const routes = [
     component: Home
   },
   { path: '/loginwithtoken', name: 'loginwithtoken', component: Login },
+
+
+
 ]
+
+
+
 
 const router = new VueRouter({
   mode: 'history',
