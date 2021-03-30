@@ -16,6 +16,8 @@ export default {
     this.$store.dispatch("getProducts");
   }
 }
+
+
 </script>
 
 <style>
