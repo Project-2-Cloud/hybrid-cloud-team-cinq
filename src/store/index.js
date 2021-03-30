@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex)
 
@@ -7,6 +8,7 @@ const url = "http://localhost:8000/products";
 const headers = { Accept: "application/json" };
 
 export default new Vuex.Store({
+    plugins: [createPersistedState()],
     state: {
         products: [],
         inCart: [],
