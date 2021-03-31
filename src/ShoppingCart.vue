@@ -66,7 +66,7 @@ export default {
     },
     checkout() {
       if (this.isAuthenticated) {
-        if (this.numInCart == 0) {
+        if (this.numInCart === 0) {
           alert('Your cart is empty!');
           return
         }    
