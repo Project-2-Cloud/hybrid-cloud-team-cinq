@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../Login.vue'
 
+import Item from '../Item'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -12,6 +14,7 @@ const routes = [
     component: Home
   },
   { path: '/loginwithtoken', name: 'loginwithtoken', component: Login },
+  { path: 'products', name: 'products', component: Item}
 ]
 
 const router = new VueRouter({

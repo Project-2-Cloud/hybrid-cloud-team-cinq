@@ -4,8 +4,13 @@ import axios from 'axios'
 
 Vue.use(Vuex)
 
+//var url;
+//const headers = { Accept: "application/json" };
+
 export default new Vuex.Store({
     state: {
+        products: [],
+        inCart: [],
         user: {
             isAuthenticated: false,
             name: "",
@@ -20,7 +25,21 @@ export default new Vuex.Store({
             products: "http://localhost:8000/products",
         },
     },
+    getters: {
+        products: state => state.products,
+        inCart: state => state.inCart,
+    },
     mutations: {
+        setProducts(state, payload) {
+            state.products = payload;
+        },
+        addToCart(state, payload) {
+            console.log(payload);
+            state.inCart.push(payload);
+        },
+        removeFromCart(state, item) {
+            state.inCart.splice(item, 1);
+        },
         logout(state) {
             state.user.isAuthenticated = false;
             state.user.name = "";
@@ -36,6 +55,12 @@ export default new Vuex.Store({
             state.user.idToken =payload.idToken;
             state.user.accessToken =payload.accessToken;
         },
+        /*setUrls(state) {
+            state.endpoints.login = process.env.VUE_APP_AUTH_URL;
+            state.endpoints.products = process.env.VUE_APP_PRODUCTS_URL;
+            url = state.endpoints.products;
+            console.log(process.env);
+        },*/
         SET_PARTNER(state, partner) {
             state.user.partner = partner;
         },
@@ -85,6 +110,15 @@ export default new Vuex.Store({
                     console.error('Error:', error);
                 });
         },
+        async getProducts({ state }) {
+            const products = await fetch(state.endpoints.products);
+            console.log(products);
+            const prods = await products.json();
+            console.log(state);
+            //state.products("setProducts", prods);
+            state.products = prods;
+            console.log(prods);
+        }
     },
     modules: {
     }
