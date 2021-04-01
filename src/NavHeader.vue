@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark" role="navigation">
     <div class="container">
-      <router-link to="/" class="navbar-brand mr-auto">Blue Store</router-link>
+      <router-link to="/" class="navbar-brand mr-auto">Crypto Consultancy</router-link>
       <ul class="navbar-nav mr-auto">
       </ul>
       <ul class="nav navbar-nav">
@@ -20,14 +20,18 @@
             </div>
           </div>
         </li>
+        <li>
+          <ShoppingCart />
+        </li>
       </ul>
     </div>
   </nav>
 </template>
 
 <script>
+import ShoppingCart from './ShoppingCart.vue';
 export default {
-  components: { },
+  components: { ShoppingCart },
   name: 'NavHeader',
   computed: {
     userEmail() {
