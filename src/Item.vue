@@ -46,7 +46,7 @@
                   </table>
                 </div>
                 <div class="modal-footer">
-                  <button class="btn btn-primary" @click="checkout()">Check out</button>
+                  <button class="btn btn-primary" @click="checkout()">Subscribe</button>
                 </div>
               </div>
             </div>
