@@ -20,6 +20,9 @@
             </div>
           </div>
         </li>
+        <li>
+          <ShoppingCart />
+        </li>
       </ul>
     </div>
   </nav>
